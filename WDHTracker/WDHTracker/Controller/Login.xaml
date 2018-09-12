@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WDHTracker.Login">
+  
+    <ContentPage.Content>
+        <StackLayout 
+          Padding="0,70,0,0"
+          BackgroundColor="#8FAE8D"
+            
+          VerticalOptions="FillAndExpand"
+          >
+
+            <Label Text="MIAO APP" TextColor="White" FontSize="Large" HorizontalOptions="Center"></Label>
+            <Label
+             Text="Log in with your WDH account"
+                TextColor="#AE0A9E"
+                    HorizontalOptions="Center"
+                FontSize="Medium"/>
+            <StackLayout
+               HorizontalOptions="FillAndExpand"
+               Spacing="0">     
+                <Entry x:Name="NameEntry"
+                 Placeholder="Username" HorizontalTextAlignment="Center" />
+                <Entry x:Name="PwEntry"
+                Placeholder="Password" HorizontalTextAlignment="Center" IsPassword="True"/>
+                
+                <ListView x:Name="NameView" ItemSelected="OnSelection"></ListView>
+            </StackLayout>
+           
+            
+            <StackLayout x:Name="mainLayout"
+   Orientation="Vertical"
+   HorizontalOptions="CenterAndExpand"
+   Spacing="30">
+            
+                <Button
+      x:Name="AcceptBtn"
+      Clicked="AcceptClick"
+      Text="Log in"
+      TextColor="#AE0A9E"
+      BackgroundColor="White"
+      HorizontalOptions="CenterAndExpand"
+      BorderRadius="15"
+      HeightRequest="40"
+      />
+             
+            </StackLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+    
+    
+</ContentPage>

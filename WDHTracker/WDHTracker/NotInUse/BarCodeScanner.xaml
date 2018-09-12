@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Scanner"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:z="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             x:Class="WDHTracker.BarCodeScanner">
+    <ContentPage.Content>
+
+        <AbsoluteLayout>
+
+            <AbsoluteLayout.Children>
+
+                <z:ZXingScannerView
+                    x:Name="zScanner"
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    HorizontalOptions="FillAndExpand"
+                    IsScanning="True"                    
+                    
+                    VerticalOptions="FillAndExpand" />
+                <z:ZXingDefaultOverlay
+                    x:Name="zOverlay"
+                    ShowFlashButton="False"
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    BottomText="No results"
+                     HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand" />
+            </AbsoluteLayout.Children>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

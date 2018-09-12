@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Find Device"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:z="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             x:Class="WDHTracker.FindInstrument">
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label x:Name="Number" Grid.Row="0" FontSize="10" />
+                <Label x:Name="Name" Grid.Row="1"  FontSize="10" />
+                <Label x:Name="Manufactur" Grid.Row="2" FontSize="10" />
+                <SearchBar Grid.Row="3" HorizontalOptions="FillAndExpand" x:Name="searchDeviceBar" TextChanged="SearchBar_TextChanged"></SearchBar>
+                <ListView x:Name="listviewdevices" Grid.Row="4" HorizontalOptions="FillAndExpand" HasUnevenRows="True" ItemTapped="LstItems_OnItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid HorizontalOptions="FillAndExpand" Padding="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding LocationName}" HorizontalOptions="StartAndExpand" Grid.Column="0" Grid.Row="0" TextColor="Blue"   FontSize="10"/>
+                                    <Label Text="{Binding Model}" HorizontalOptions="StartAndExpand" Grid.Column="1" Grid.Row="0" TextColor="Blue"  FontSize="10"/>
+                                    <Label Text="{Binding Manufacturer}" HorizontalOptions="EndAndExpand" Grid.Column="2" Grid.Row="0" TextColor="Blue"  FontSize="10"/>
+                                    
+
+
+                                </Grid>
+                            </ViewCell>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Overview"
+                xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:WDHTracker"
+             x:Class="WDHTracker.MainPage">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+            iOS="20, 40, 20, 20"
+            Android="20, 20, 20, 20"
+            WinPhone="20, 20, 20, 20" />
+    </ContentPage.Padding>
+    
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="itemLabel" Grid.Row="0" Margin="10" Text="My Items" FontSize="25" />
+                <ListView x:Name="listviewDevices" Grid.Row="1" HorizontalOptions="FillAndExpand" HasUnevenRows="True" ItemTapped="LstItems_OnItemTapped" IsPullToRefreshEnabled="True"
+         
+          >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid HorizontalOptions="FillAndExpand" Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Text="{Binding ItemNumber}" HorizontalOptions="StartAndExpand" Grid.Row="0" TextColor="Blue"  FontAttributes="Bold"/>
+                                    <Label Text="{Binding Model}" HorizontalOptions="StartAndExpand" Grid.Row="1" TextColor="Orange"  FontAttributes="Bold"/>
+                                    <Label Text="{Binding Manufacturer}" HorizontalOptions="StartAndExpand" Grid.Row="2" TextColor="Gray"  FontAttributes="Bold"/>
+
+                                    <BoxView HeightRequest="2" Margin="0,10,10,0" BackgroundColor="Gray" Grid.Row="3" HorizontalOptions="FillAndExpand" />
+                                </Grid>
+                            </ViewCell>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+           
+        </Grid>
+
+
+    </ContentPage.Content>
+</ContentPage>
