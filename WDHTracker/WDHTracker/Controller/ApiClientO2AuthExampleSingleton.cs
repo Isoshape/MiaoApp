@@ -11,26 +11,21 @@ using Plugin.SecureStorage;
 
 namespace WDHTracker
 {
-    class ApiClientWinAuthExampleSingleton : BasicRestClient
+    class ApiClientO2AuthExampleSingleton : BasicRestClient
     {
         private static object _instanceLock = new object();
         #region Singleton
-        private static  ApiClientWinAuthExampleSingleton _instance = new ApiClientWinAuthExampleSingleton();
+        private static ApiClientO2AuthExampleSingleton _instance = new ApiClientO2AuthExampleSingleton();
 
        
 
-        static ApiClientWinAuthExampleSingleton() { }
+        static ApiClientO2AuthExampleSingleton() { }
 
-
-
-        private ApiClientWinAuthExampleSingleton() : base(new HttpClient(new HttpClientHandler() { Credentials = new NetworkCredential(CrossSecureStorage.Current.GetValue("username"), CrossSecureStorage.Current.GetValue("password"), "emea") }), null)
+        private ApiClientO2AuthExampleSingleton() : base("https://172.21.6.18/", CrossSecureStorage.Current.GetValue("username"), CrossSecureStorage.Current.GetValue("password"))
         {
-            base._httpClient.BaseAddress = new Uri("http://miaodev.oticon.dk");
-            //http://miao.dgs.com/
-            //"http://miaodev.oticon.dk/"
         }
 
-        public static ApiClientWinAuthExampleSingleton Instance
+        public static ApiClientO2AuthExampleSingleton Instance
         {
             get
             {
@@ -40,7 +35,7 @@ namespace WDHTracker
                     {
                         if (_instance == null)
                         {
-                            _instance = new ApiClientWinAuthExampleSingleton();
+                            _instance = new ApiClientO2AuthExampleSingleton();
                         }
                     }
                 }

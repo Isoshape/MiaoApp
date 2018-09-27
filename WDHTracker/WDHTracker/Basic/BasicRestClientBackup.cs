@@ -7,23 +7,23 @@ namespace WDHTracker.Basic
     /// <summary>
     /// Basic class to connect with Web API.
     /// </summary>
-    public class BasicRestClient : CoreRestClient
+    public class BasicRestClientBackup : CoreRestClient
     {
         /// <summary>
         /// 
         /// </summary>
         /// <param name="httpClient"></param>
         /// <param name="auth">Can be set to NULL but user shuld remeber to set 'withToken' on false in 'send' function.</param>
-        public BasicRestClient(HttpClient httpClient, IOAuth2ClientAuthentication auth) : base(httpClient, auth)
+        public BasicRestClientBackup(HttpClient httpClient, IOAuth2ClientAuthentication auth) : base(httpClient, auth)
         {
         }
 
         /// <summary>
         /// </summary>
         /// <param name="baseUrl">API base url. E.g: 'http://0.0.0.0/'.</param>
-        public BasicRestClient(string baseUrl) : base(baseUrl)
-        {
-        }
+        //public BasicRestClient(string baseUrl) : base(baseUrl)
+        //{
+        //}
 
         /// <summary>
         /// </summary>
@@ -31,9 +31,9 @@ namespace WDHTracker.Basic
         /// <param name="userLogin">User login.</param>
         /// <param name="userPassword">User password.</param>
         /// <param name="loginRelativePath">Login relative path</param>
-        public BasicRestClient(string baseUrl, string userLogin, string userPassword, string loginRelativePath = "Token") : base(baseUrl, userLogin, userPassword, loginRelativePath)
-        {
-        }
+        //public BasicRestClient(string baseUrl, string userLogin, string userPassword, string loginRelativePath = "Token") : base(baseUrl, userLogin, userPassword, loginRelativePath)
+        //{
+        //}
 
 
         protected virtual T DeserializeResponseObj<T>(string json)

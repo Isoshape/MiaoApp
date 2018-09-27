@@ -78,7 +78,7 @@ namespace WDHTracker
                     CrossSecureStorage.Current.SetValue("username", NameEntry.Text);
                     CrossSecureStorage.Current.SetValue("password", PwEntry.Text);
 
-                    //var instrumetns = ApiClientWinAuthExampleSingleton.Instance.GetUserInstruments(CrossSecureStorage.Current.GetValue("username"));
+                    var instrumetns = ApiClientO2AuthExampleSingleton.Instance.GetUserInstruments(CrossSecureStorage.Current.GetValue("username"));
                     //List<InstrumentDetails> instrumetns = null;
 
                     LoginTest tester = new LoginTest();
@@ -98,7 +98,7 @@ namespace WDHTracker
             }
             else
             {
-                await DisplayAlert("Internet", "No internat available", "OK");
+                await DisplayAlert("Internet", "No internet available", "OK");
             }
 
 
